@@ -64,9 +64,7 @@ function calcPay() {
             break;
     }
     
-    if(rate2021>=currHourlyPay){
-        currHourlyPay=rate2021;
-    }else{
+    if(currHourlyPay>=rate2021){
         rate2021=currHourlyPay;
     }
             
