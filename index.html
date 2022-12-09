@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>TSL 40-hour Restoration Worksheet</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <h1 style="margin-left: 40px;">TSL 40-Hour Workweek Restoration Calculator</h1>
+    <p style="margin-left: 40px;margin-right: 40px;">PLEASE READ: <br>This tool is to be used for ESTIMATION purposes only. Every person's working situation might be slightly different, but this tool attempts to account for the "typical" scenarios under which someone might be working. This is not a replacement for doing the calculations yourself to see your new hourly rate or back pay amount. This tool does not supersede anything in the TSL Contract or any Memorandums of Agreement, Sideletters, or otherwise. If there is a discrepancy between this page and any of the before listed, the before listed shall be in effect.&nbsp;<br><br>A note for those working on-call/weekly buyout:<br>During negotiations, we were unable to get the company to elaborate on how those working on-call would be affected by the 45 &gt; 40 change. Hourly pay increases to offset the reduction of hours were discussed as being specifically for those working on 40+5 schedules going down to 40. The company did not say those working on-call would NOT have their pay adjusted in line with everyone else, but they did not say they WOULD either. We encourage you to keep an eye on your pay and discuss with your department manager as this shift occurs, and to reach out to your shop stewards if you have questions or encounter problems.<br><br>No data collected from you is ever saved or sent to TAG; all calculations are done in your browser.&nbsp;</p>
+    <div class="form-check" style="margin-left: 40px;"><input class="form-check-input" type="checkbox" id="understandCheckbox" name="understandCheckbox" required=""><label class="form-check-label" for="formCheck-1">I understand</label></div>
+    <section id="infoForm" class="position-relative py-4 py-xl-5">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-7">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>2021 Minimum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Category 1</td>
+                                    <td>$53.15</td>
+                                </tr>
+                                <tr>
+                                    <td>Category 2a</td>
+                                    <td>$45.48</td>
+                                </tr>
+                                <tr>
+                                    <td>Category 2b</td>
+                                    <td>$49.30</td>
+                                </tr>
+                                <tr>
+                                    <td>Category 3</td>
+                                    <td>$38.63</td>
+                                </tr>
+                                <tr>
+                                    <td>Category 4 (Trainee) - Months 1 - 6</td>
+                                    <td>$29.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Category 4 (Trainee) - Months 7 - 12</td>
+                                    <td>$32.38</td>
+                                </tr>
+                                <tr>
+                                    <td>Category 4 (Trainee) - Months 13 - 18</td>
+                                    <td>$35.78</td>
+                                </tr>
+                                <tr>
+                                    <td>Category 4 (Trainee - Story/Writing) - Months 1 - 6</td>
+                                    <td>$34.40</td>
+                                </tr>
+                                <tr>
+                                    <td>Category 4 (Trainee - Story/Writing) - Months 7 - 12</td>
+                                    <td>$36.06</td>
+                                </tr>
+                                <tr>
+                                    <td>Category 4 (Trainee - Story/Writing) - Months 13 - 18</td>
+                                    <td>$37.73</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+                    <div class="card mb-5">
+                        <div class="card-body p-sm-5">
+                            <h1>Your Information</h1>
+                            <form method="post">
+                                <div class="mb-3"><label class="form-label">Your Current Hourly Rate</label><input class="form-control" type="text" id="currHourlyPay" name="currHourlyPay" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" placeholder="12.34"></div>
+                                <div class="mb-3">
+                                    <div class="row">
+                                        <div class="col"><select class="form-select" id="category" name="categorySelection">
+                                                <optgroup label="Category">
+                                                    <option value="0" selected="">Select Your Category</option>
+                                                    <option value="1">Category 1</option>
+                                                    <option value="2">Category 2a</option>
+                                                    <option value="3">Category 2b</option>
+                                                    <option value="4">Category 3</option>
+                                                    <option value="5">Category 4 (Trainee) Mo. 1-6</option>
+                                                    <option value="6">Category 4 (Trainee) Mo. 7-12</option>
+                                                    <option value="7">Category 4 (Trainee) Mo. 13-18</option>
+                                                    <option value="8">Category 4 (Trainee - Story/Writing) Mo. 1-6</option>
+                                                    <option value="9">Category 4 (Trainee - Story/Writing) Mo. 7-13</option>
+                                                    <option value="10">Category 4 (Trainee - Story/Writing) Mo. 13-18</option>
+                                                </optgroup>
+                                            </select></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><label class="form-label">Number of Hours TYPICALLY Worked Per Week</label><input class="form-control" type="text" id="hoursTypicallyWorked" name="hoursTypicallyWorked" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" placeholder="45"></div>
+                                <div class="mb-3"><label class="form-label">Number of Weeks Worked Between 11/1/2021 and 10/31/2022</label><input class="form-control" type="text" id="weeksLastYear" name="weeksLastYear" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" placeholder="52"></div>
+                                <div class="mb-3"><label class="form-label">Number of Weeks Worked Between 11/1/2022 and NOW</label><input class="form-control" type="text" id="weeksThisYear" name="weeksThisYear" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" placeholder="8"></div>
+                                <div><button class="btn btn-primary d-block w-100" id="submitButton" type="button">Submit</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-5">
+                        <div class="card-body p-sm-5">
+                            <h1>Your Results</h1>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3"><label class="form-label">Your Hourly Rate As Of 11/1/21</label><input type="text" id="rate2021" name="currHourlyPay" readonly=""></div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3"><label class="form-label">Your Hourly Rate As of 11/1/22</label><input type="text" id="rate2022" name="currHourlyPay" readonly=""></div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3"><label class="form-label">Your Hourly Rate As Of 11/1/23</label><input type="text" id="rate2023" name="currHourlyPay" readonly=""></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="mb-3"><label class="form-label">APPROXIMATE Back Pay Owed for 11/1/21 - 10/31/22:</label><input type="text" id="backpay2021" name="currHourlyPay" readonly="" style="margin-left: 16px;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="mb-3"><label class="form-label">APPROXIMATE Back Pay Owed for 11/1/22 - NOW:</label><input type="text" id="backpay2022" name="currHourlyPay" readonly="" style="margin-left: 16px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
