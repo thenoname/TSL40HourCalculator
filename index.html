@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>TSL 40-hour Restoration Worksheet</title>
+    <title>TSL 40-hour Restoration Worksheet Table Style</title>
+    <meta name="robots" content="noindex,nofollow">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -21,7 +22,7 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Category</th>
+                                    <th style="padding-right: 0px;margin-right: 0px;">Category</th>
                                     <th>2021 Minimum</th>
                                 </tr>
                             </thead>
@@ -75,7 +76,7 @@
                         <div class="card-body p-sm-5">
                             <h1>Your Information</h1>
                             <form method="post">
-                                <div class="mb-3"><label class="form-label">Your Current Hourly Rate</label><input class="form-control" type="text" id="currHourlyPay" name="currHourlyPay" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" placeholder="12.34"></div>
+                                <div class="mb-3"><label class="form-label">Hourly Rate</label><input class="form-control" type="text" id="hourlyRate" name="currHourlyPay" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" placeholder="12.34"></div>
                                 <div class="mb-3">
                                     <div class="row">
                                         <div class="col"><select class="form-select" id="category" name="categorySelection">
@@ -85,28 +86,51 @@
                                                     <option value="2">Category 2a</option>
                                                     <option value="3">Category 2b</option>
                                                     <option value="4">Category 3</option>
-                                                    <option value="5">Category 4 (Trainee) Mo. 1-6</option>
-                                                    <option value="6">Category 4 (Trainee) Mo. 7-12</option>
-                                                    <option value="7">Category 4 (Trainee) Mo. 13-18</option>
-                                                    <option value="8">Category 4 (Trainee - Story/Writing) Mo. 1-6</option>
-                                                    <option value="9">Category 4 (Trainee - Story/Writing) Mo. 7-13</option>
-                                                    <option value="10">Category 4 (Trainee - Story/Writing) Mo. 13-18</option>
+                                                    <option value="5">Category 4 Mo. 1-6</option>
+                                                    <option value="6">Category 4 Mo. 7-12</option>
+                                                    <option value="7">Category 4 Mo. 13-18</option>
+                                                    <option value="8">Category 4 (Story/Writing) Mo. 1-6</option>
+                                                    <option value="9">Category 4 (Story/Writing) Mo. 7-13</option>
+                                                    <option value="10">Category 4 (Story/Writing) Mo. 13-18</option>
                                                 </optgroup>
                                             </select></div>
                                     </div>
                                 </div>
-                                <div class="mb-3"><label class="form-label">Number of Hours TYPICALLY Worked Per Week</label><input class="form-control" type="text" id="hoursTypicallyWorked" name="hoursTypicallyWorked" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" placeholder="45"></div>
-                                <div class="mb-3"><label class="form-label">Number of Weeks Worked Between 11/1/2021 and 10/31/2022</label><input class="form-control" type="text" id="weeksLastYear" name="weeksLastYear" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" placeholder="52"></div>
-                                <div class="mb-3"><label class="form-label">Number of Weeks Worked Between 11/1/2022 and NOW</label><input class="form-control" type="text" id="weeksThisYear" name="weeksThisYear" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" placeholder="8"></div>
-                                <div><button class="btn btn-primary d-block w-100" id="submitButton" type="button">Submit</button></div>
+                                <div class="mb-3"><label class="form-label">Number of Hours TYPICALLY Worked Per Week</label><input class="form-control" type="text" id="hoursWorked" name="hoursTypicallyWorked" required="" pattern="[0-9]+\.[0-9]+|[0-9]+" value="45"></div>
+                                <div class="mb-3"><label class="form-label">Rate Start Date</label><input class="form-control" id="startDate" type="date" name="startDate" required=""></div>
+                                <div class="mb-3"><label class="form-label">Rate End Date</label><input class="form-control" id="endDate" type="date" name="endDate" required=""></div>
+                                <div><button class="btn btn-primary d-block w-100" id="addRowButton" type="button">Add Row</button></div>
                             </form>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Hourly Rate<br>Paid</th>
+                                    <th>Hourly Rate Owed</th>
+                                    <th>Category</th>
+                                    <th>Hours Typically <br>Worked Per Week</th>
+                                    <th>Category Minimum</th>
+                                    <th>Back Pay Owed</th>
+                                </tr>
+                            </thead>
+                            <tbody id="payTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col">
                     <div class="card mb-5">
                         <div class="card-body p-sm-5">
-                            <h1>Your Results</h1>
+                            <h1>Your Transition From 45 to 42 to 40 Rates</h1>
                             <div class="row">
                                 <div class="col">
                                     <div class="row">
@@ -118,18 +142,6 @@
                                         </div>
                                         <div class="col">
                                             <div class="mb-3"><label class="form-label">Your Hourly Rate As Of 11/1/23</label><input type="text" id="rate2023" name="currHourlyPay" readonly=""></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="mb-3"><label class="form-label">APPROXIMATE Back Pay Owed for 11/1/21 - 10/31/22:</label><input type="text" id="backpay2021" name="currHourlyPay" readonly="" style="margin-left: 16px;"></div>
-                                        </div>
-                                        <div class="col">
-                                            <div class="mb-3"><label class="form-label">APPROXIMATE Back Pay Owed for 11/1/22 - NOW:</label><input type="text" id="backpay2022" name="currHourlyPay" readonly="" style="margin-left: 16px;"></div>
                                         </div>
                                     </div>
                                 </div>
