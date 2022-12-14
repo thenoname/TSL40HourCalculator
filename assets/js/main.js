@@ -63,7 +63,7 @@ function onAddRowClicked() {
 }
 
 function calculateTransitionRates(hourlyRate){
-    if(hourlyRate>minimum){
+    if(hourlyRate>=minimum){
         nov2021Rate = hourlyRate; //GLOBAL
     }else{
         nov2021Rate = minimum; //GLOBAL
@@ -103,7 +103,6 @@ function checkInput() {
 
 function storeInTable(startDate, endDate, hourlyRatePaid, hourlyRateOwed, category, hoursWorked) {
     // Do calculations    
-    calculateTransitionRates();
     var numWeeks = getWeeks(startDate, endDate);
     var backpay = calcBackPay(numWeeks, hourlyRatePaid, hourlyRateOwed, hoursWorked);
 
