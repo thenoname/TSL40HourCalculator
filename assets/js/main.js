@@ -63,12 +63,16 @@ function onAddRowClicked() {
 }
 
 function calculateTransitionRates(hourlyRate){
-    if(hourlyRate>=minimum){
+    if(hourlyRate>minimum){
         nov2021Rate = hourlyRate; //GLOBAL
+        if(nov2021Rate < minimum*1.03){
+            nov2021Rate = minimum*1.03;
+        }
+        nov2022Rate = nov2021Rate*1.1047; //GLOBAL
     }else{
         nov2021Rate = minimum; //GLOBAL
+        nov2022Rate = nov2021Rate*1.1047*1.03; //GLOBAL
     }
-    nov2022Rate = nov2021Rate*1.1047; //GLOBAL
     nov2023Rate = nov2022Rate*1.075; //GLOBAL
 
     nov2022Rate = parseFloat(nov2022Rate.toFixed(2)); //GLOBAL
@@ -118,6 +122,12 @@ function storeInTable(startDate, endDate, hourlyRatePaid, hourlyRateOwed, catego
     var row_hoursWorked = row.insertCell(5);
     var row_minimum = row.insertCell(6);
     var row_backPay = row.insertCell(7);
+    
+    startTime = new Date(startDate).getTime()/1000; //GLOBAL
+    if(startTime >= nov2022Time){
+        minimum = minimum*1.03;
+        minimum = parseFloat(minimum.toFixed(2));
+    }
     
     row_startDate.innerHTML = startDate;
     row_endDate.innerHTML = endDate;
